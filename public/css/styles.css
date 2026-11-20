@@ -19,6 +19,76 @@
   box-sizing: border-box;
 }
 
+html {
+  max-width: 100vw:
+  overflow-x: hidden:
+}
+
+.bar {
+  display: none;
+  background: transparent;
+  border: none;
+  transition: all 300ms ease;
+}
+
+.btn__menu--svg {
+  filter: brightness(0) invert(1);
+}
+
+
+.btn__menu--svg:hover{
+  scale: 1.1;
+  transition: all 300ms ease;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 378px;
+  margin: 24px 16px;
+  padding: 32px;
+  background-color: #3a322d;
+  border: 1px solid rgba(229, 231, 235);
+  border-radius: 4px;
+  z-index: 4;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateX(300%);
+  transition: all 300ms ease;
+}
+
+.modal__links {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal__link {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 8px 0;
+  padding-bottom: 4px;
+  border-bottom: 2px solid rgba(229, 231, 235);
+}
+
+.menu--open .modal {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.btn__menu--close {
+  position: fixed;
+  top: 24px;
+  right: 18px;
+}
+
 body {
   margin: 0;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -780,6 +850,25 @@ img {
 
   .footer-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-inner {
+    display: flex;
+    flex-direction: column-reverse;
+    overflow: hidden;
+  }
+
+  .playbook-grid {
+    display:flex;
+    flex-direction:column;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .bar {
+    display: block;
   }
 }
 
